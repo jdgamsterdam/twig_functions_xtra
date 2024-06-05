@@ -1,10 +1,10 @@
 {
     "name": "jdgamsterdam/twig_functions_xtra",
-    "description": "Useful functions, filters for twig @ Drupal 9 and CiviCrm",
+    "description": "Useful functions, filters for twig @ Drupal 10 and CiviCrm - Due to Changes in Twig API this may only work with Drupal 10",
     "type": "drupal-module",
     "authors": [
       {
-        "name": "Jon Goldberg taken from Base Project Drupal Twig Food by Michal Landsman",
+        "name": "Jon Goldberg (based on a number of other projects)",
         "email": "jdgamsterdam@gmail.com"
       }
     ],
@@ -15,7 +15,6 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {
-        "drupal/core": "^8.8 || ^9 || ^10"
+        "drupal/core": "^10"
     }
   }
-  

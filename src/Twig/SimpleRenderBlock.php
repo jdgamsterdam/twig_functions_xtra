@@ -9,10 +9,15 @@ use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+//use Drupal\image\Entity\ImageStyle;
+//use Drupal\Core\Datetime\DateFormatterInterface;
+//use Drupal\Core\Routing\UrlGeneratorInterface;
+//use Drupal\Core\Theme\ThemeManagerInterface;
+
 /**
  * Adds twig extension to render a block.
  */
-class NewTwigFunctions extends AbstractExtension {
+class SimpleRenderBlock extends AbstractExtension {
 
   /**
    * The renderer.
@@ -55,7 +60,8 @@ class NewTwigFunctions extends AbstractExtension {
    * {@inheritdoc}
    */
   public function getName() {
-    return 'render_block_new';
+   // return 'render_block_new';
+     return 'hello_world';
   }
 
   /**
@@ -64,7 +70,13 @@ class NewTwigFunctions extends AbstractExtension {
   public function getFunctions() {
     return [
       new TwigFunction('render_block_new', [$this, 'renderBlockNew'], ['is_safe' => ['html']]),
+      new TwigFunction('hello_world',  [$this, 'renderWithHelloWorld'], ['is_safe' => ['html']]),
     ];
+  }
+
+  public function renderWithHelloWorld($sentstring) {
+      $string = "Hello World From My Twig";
+      return $sentstring.$string;
   }
 
   /**
@@ -77,7 +89,7 @@ class NewTwigFunctions extends AbstractExtension {
    *
    * @return array
    *   Returns render array of block.
-   *
+   
    * @throws \Exception
    */
   public function renderBlockNew($block_id, $configuration = []) {
