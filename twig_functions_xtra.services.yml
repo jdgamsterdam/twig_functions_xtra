@@ -1,0 +1,10 @@
+services:
+  twig_functions_xtra.twig.render_block_new:
+    class: Drupal\twig_functions_xtra\Twig\NewTwigFunctions
+    arguments: [ '@renderer', '@entity_type.manager', '@twig_functions_xtra.block_view_builder_new' ]
+    tags:
+      - { name: twig.extension }
+
+  twig_functions_xtra.block_view_builder_new:
+    class: Drupal\twig_functions_xtra\View\BlockViewBuilderNew
+    arguments: [ '@plugin.manager.block', '@context.repository', '@context.handler', '@current_user', '@request_stack', '@current_route_match', '@title_resolver' ]

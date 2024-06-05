@@ -1,0 +1,21 @@
+{
+    "name": "jdgamsterdam/twig_functions_xtra",
+    "description": "Useful functions, filters for twig @ Drupal 9 and CiviCrm",
+    "type": "drupal-module",
+    "authors": [
+      {
+        "name": "Jon Goldberg taken from Base Project Drupal Twig Food by Michal Landsman",
+        "email": "jdgamsterdam@gmail.com"
+      }
+    ],
+    "homepage": "https://github.com/users/jdgamsterdam/projects/2/",
+    "support": {
+      "issues": "https://github.com/users/jdgamsterdam/projects/2/issues"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "drupal/core": "^8.8 || ^9 || ^10"
+    }
+  }
+  
