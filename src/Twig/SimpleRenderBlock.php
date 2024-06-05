@@ -9,11 +9,6 @@ use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-//use Drupal\image\Entity\ImageStyle;
-//use Drupal\Core\Datetime\DateFormatterInterface;
-//use Drupal\Core\Routing\UrlGeneratorInterface;
-//use Drupal\Core\Theme\ThemeManagerInterface;
-
 /**
  * Adds twig extension to render a block.
  */
@@ -70,13 +65,7 @@ class SimpleRenderBlock extends AbstractExtension {
   public function getFunctions() {
     return [
       new TwigFunction('render_block_new', [$this, 'renderBlockNew'], ['is_safe' => ['html']]),
-      new TwigFunction('hello_world',  [$this, 'renderWithHelloWorld'], ['is_safe' => ['html']]),
     ];
-  }
-
-  public function renderWithHelloWorld($sentstring) {
-      $string = "Hello World From My Twig";
-      return $sentstring.$string;
   }
 
   /**
